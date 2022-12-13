@@ -1,24 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "@fontsource/raleway/400.css";
+import "@fontsource/yeon-sung/400.css";
+import { extendTheme, ChakraProvider } from "@chakra-ui/react";
+import Layout from "./Layout";
+import AnimatedCursor from "react-animated-cursor";
+const config = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+  fonts: {
+    heading: `'Yeon Sung', sans-serif`,
+    body: `'Raleway', sans-serif`,
+  },
+  // const colors = {
+  //   brand: {
+  //     900: "#1a365d",
+  //     800: "#153e75",
+  //     700: "#2a69ac",
+  //   },
+  // };
+};
 
+const theme = extendTheme({ config });
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={theme}>
+      <AnimatedCursor
+        innerSize={12}
+        outerSize={12}
+        color="251, 182, 206"
+        outerAlpha={0.2}
+        innerScale={0.7}
+        outerScale={5}
+        // outerStyle={{
+        //   border: '3px solid #fff'
+        // }}
+        clickables={[
+          "a",
+          'input[type="text"]',
+          'input[type="email"]',
+          'input[type="number"]',
+          'input[type="submit"]',
+          'input[type="image"]',
+          "label[for]",
+          "select",
+          "textarea",
+          "button",
+          ".link",
+        ]}
+      />
+      <Layout />
+    </ChakraProvider>
   );
 }
 
