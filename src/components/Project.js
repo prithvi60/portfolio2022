@@ -5,6 +5,7 @@ import {
   Heading,
   Highlight,
   Image,
+  Link,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -17,9 +18,15 @@ const Tile = () => (
         alt="Green double couch with wooden legs"
         borderRadius="lg"
       />
-      <Stack mt="6" spacing="3">
+      <Stack
+        mt="6"
+        spacing="3"
+        display={"flex"}
+        flexDirection={"column"}
+        alignItems={"center"}
+      >
         <Heading size="md">Front end developer</Heading>
-        <Text>
+        <Text textAlign={"center"}>
           Worked in a boutique agency invloved in development of planner app for
           a unicorn media company
         </Text>
@@ -43,11 +50,22 @@ export const Project = forwardRef((_, ref) => {
       bg={"#1b202b"}
       borderBottom={"2px"}
       borderColor={"#d2bdf6"}
+      position={"relative"}
     >
+      <Box
+        width={"8%"}
+        height={8}
+        bg={"purple.200"}
+        position={"absolute"}
+        top={0}
+        left={0}
+      ></Box>
       <Box mb={4}>
-        <Heading mb={2}>Work:</Heading>
+        <Box display={"flex"} justifyContent={"center"} width={"100%"}>
+          <Heading mb={2}>Work:</Heading>
+        </Box>
         <Highlight
-          query={["Prithvi", "HTML, CSS, and JavaScript"]}
+          query={["design"]}
           styles={{ px: "1", py: "1", color: "teal.100", fontWeight: "bold" }}
         >
           In my current position, I am responsible for the design and
@@ -65,9 +83,8 @@ export const Project = forwardRef((_, ref) => {
         ))}
       </Box>
 
-      {/* <Box>
-        <Heading mb={2}>Game / meme:</Heading>
-      </Box> */}
+      <Box>Projects</Box>
+      <Link>Github</Link>
     </Box>
   );
 });

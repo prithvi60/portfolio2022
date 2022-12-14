@@ -1,5 +1,11 @@
 import { Box, Heading, Highlight, Text } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
+import Lottie from "lottie-react";
+import codeAnimation from "../assets/code.json";
+const style = {
+  height: 300,
+};
+
 export const About = forwardRef((_, ref) => {
   return (
     <Box
@@ -10,9 +16,23 @@ export const About = forwardRef((_, ref) => {
       bg={"#1b202b"}
       borderBottom={"2px"}
       borderColor={"#d2bdf6"}
+      position={"relative"}
+      display={"flex"}
+      flexDirection={"column"}
+      alignItems={"center"}
     >
+      <Box
+        width={"8%"}
+        height={8}
+        bg={"purple.200"}
+        position={"absolute"}
+        top={0}
+        left={0}
+      ></Box>
       <Box mb={4}>
-        <Heading mb={2}>About me:</Heading>
+        <Box display={"flex"} justifyContent={"center"} width={"100%"}>
+          <Heading mb={2}>About me:</Heading>
+        </Box>
         <Highlight
           query={["Prithvi", "HTML, CSS, and JavaScript"]}
           styles={{ px: "1", py: "1", color: "teal.100", fontWeight: "bold" }}
@@ -36,13 +56,20 @@ export const About = forwardRef((_, ref) => {
           considering me for your project!
         </Highlight>
       </Box>
-      <Box>
+      {/* <Box>/ */}
         <Heading mb={2}>Skills:</Heading>
         <Text>React JavaScript CSS Typescript Graphql </Text>
-      </Box>
+      {/* </Box> */}
       <Box>
-      <Heading mb={2}>Game / meme:</Heading>
-
+        {/* <Heading mb={2}>Game / meme:</Heading> */}
+        <Box position={"absolute"} right={0} bottom={2}>
+          <Lottie
+            animationData={codeAnimation}
+            style={style}
+            loop={1}
+            // interactivity={interactivity}
+          />
+        </Box>
       </Box>
     </Box>
   );

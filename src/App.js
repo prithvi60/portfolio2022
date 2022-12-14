@@ -3,7 +3,7 @@ import "@fontsource/raleway/400.css";
 import "@fontsource/yeon-sung/400.css";
 import { extendTheme, ChakraProvider } from "@chakra-ui/react";
 import Layout from "./Layout";
-import AnimatedCursor from "react-animated-cursor";
+// import AnimatedCursor from "react-animated-cursor";
 const config = {
   initialColorMode: "dark",
   useSystemColorMode: false,
@@ -24,10 +24,10 @@ const theme = extendTheme({ config });
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <AnimatedCursor
+      {/* <AnimatedCursor
         innerSize={12}
         outerSize={12}
-        color="251, 182, 206"
+        color="210, 189, 246"
         outerAlpha={0.2}
         innerScale={0.7}
         outerScale={5}
@@ -47,7 +47,7 @@ function App() {
           "button",
           ".link",
         ]}
-      />
+      /> */}
       <Layout />
     </ChakraProvider>
   );
