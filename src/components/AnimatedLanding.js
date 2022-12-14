@@ -16,7 +16,7 @@ const pathVariants = {
     },
   },
 };
-export default function LandingPage({ handleClick }) {
+export default function AnimatedLanding({ handleClick }) {
   return (
     <Stack height={"100vh"} width={"100vw"} position={"absolute"} top={0}>
       <motion.svg
@@ -67,7 +67,7 @@ export default function LandingPage({ handleClick }) {
         display={"flex"}
         justifyContent={"center"}
       >
-        <Button colorScheme={"pink"} onClick={handleClick}>
+        <Button colorScheme={"purple"} onClick={handleClick}>
           {" "}
           Scroll Down
         </Button>

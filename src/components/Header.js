@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Box, Stack } from "@chakra-ui/react";
-
+import { FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
 const pathVariants = {
   hidden: {
     opacity: 0,
@@ -21,6 +21,19 @@ const pathVariants = {
 const Header = () => {
   return (
     <header style={{ height: "100%" }}>
+      <Stack
+        display={"flex"}
+        justifyContent={"flex-end"}
+        width={"100%"}
+        flexDirection={"row"}
+        p={4}
+      >
+        <Box>
+          <FaGithub fill="#d2bdf6" />
+          <FaLinkedinIn fill="#d2bdf6" />
+          <FaWhatsapp fill="#d2bdf6" />
+        </Box>
+      </Stack>
       <Box className="ani" display={"flex"} justifyContent={"center"} p={4}>
         <Stack>
           <motion.svg

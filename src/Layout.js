@@ -1,20 +1,24 @@
 import { Box } from "@chakra-ui/react";
 import React, { useRef } from "react";
-import {About} from "./components/About";
+import { About } from "./components/About";
+import { Contact } from "./components/Contact";
 import Header from "./components/Header";
-import LandingPage from "./components/landingPage";
+import { Project } from "./components/Project";
+import AnimatedLanding from "./components/AnimatedLanding";
 
 export default function Layout() {
-    const ref = useRef(null);
+  const ref = useRef(null);
 
-    const handleClick = () => {
-      ref.current?.scrollIntoView({behavior: 'smooth'});
-    };
+  const handleClick = () => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <Box bg={"blackAlpha.900"} height={"100vh"}>
       <Header />
-      <LandingPage handleClick={handleClick}/>
-      <About ref={ref}/>
+      <AnimatedLanding handleClick={handleClick} />
+      <About ref={ref} />
+      <Project />
+      <Contact />
     </Box>
   );
 }

@@ -47,11 +47,26 @@ code {
 header .pizza-svg {
   width: 0.5em;
   overflow: visible;
-  stroke: #fbb6ce;
+  stroke: #d2bdf6;
   stroke-width: 4;
   stroke-linejoin: round;
   stroke-linecap: round;
 }
 .title {
-  color: #fbb6ce;
+  color: #d2bdf6;
+}
+body::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+body::-webkit-scrollbar-track {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #d2bdf6;
+  outline: 1px solid #d2bdf6;
 }
