@@ -1,41 +1,42 @@
-import { Box, Heading, Highlight, Text } from "@chakra-ui/react";
+import { Box, Heading, Highlight } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 import Lottie from "lottie-react";
-import codeAnimation from "../assets/code.json";
+// import codeAnimation from "../assets/code.json";
 import lineAnimation from "../assets/divider.json";
 
-const style = {
-  height: 300,
-};
+// const style = {
+//   height: 300,
+// };
 const linestyle = {
   height: 5,
-  width:"100%"
+  width: "100%",
 };
-const interactivity = {
-  mode: "scroll",
-  actions: [
-    {
-      visibility: [0, 0.2],
-      type: "stop",
-      frames: [0],
-    },
-    {
-      visibility: [0.2, 0.45],
-      type: "seek",
-      frames: [0, 45],
-    },
-    {
-      visibility: [0.45, 1.0],
-      type: "loop",
-      frames: [45, 60],
-    },
-  ],
-};
+// const interactivity = {
+//   mode: "scroll",
+//   actions: [
+//     {
+//       visibility: [0, 0.2],
+//       type: "stop",
+//       frames: [0],
+//     },
+//     {
+//       visibility: [0.2, 0.45],
+//       type: "seek",
+//       frames: [0, 45],
+//     },
+//     {
+//       visibility: [0.45, 1.0],
+//       type: "loop",
+//       frames: [45, 60],
+//     },
+//   ],
+// };
 export const About = forwardRef((_, ref) => {
   return (
     <Box
-      p={4}
-      style={{ height: "100%" }}
+      px={4}
+      py={12}
+      // style={{ height: "100%" }}
       color={"#d2bdf6"}
       ref={ref}
       bg={"#1b202b"}
@@ -47,9 +48,9 @@ export const About = forwardRef((_, ref) => {
       alignItems={"center"}
     >
       <Box
-        width={"8%"}
+        width={"3%"}
         height={8}
-        bg={"purple.200"}
+        bg={"teal.100"}
         position={"absolute"}
         top={0}
         left={0}
@@ -82,15 +83,9 @@ export const About = forwardRef((_, ref) => {
         </Highlight>
       </Box>
       {/* <Box>/ */}
-      <Heading mb={2}>Skills:</Heading>
-      <Text>React JavaScript CSS Typescript Graphql </Text>
+      {/* <Heading mb={2}>Skills:</Heading>
+      <Text>React JavaScript CSS Typescript Graphql </Text> */}
       {/* </Box> */}
-      <Box>
-        {/* <Heading mb={2}>Game / meme:</Heading> */}
-        <Box position={"absolute"} right={0} bottom={2}>
-          <Lottie animationData={codeAnimation} style={style} loop={1} />
-        </Box>
-      </Box>
       <Box
         position={"absolute"}
         display={"flex"}
@@ -101,7 +96,6 @@ export const About = forwardRef((_, ref) => {
         <Lottie
           animationData={lineAnimation}
           style={linestyle}
-          // interactivity={interactivity}
         />
       </Box>
     </Box>

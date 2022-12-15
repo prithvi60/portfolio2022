@@ -91,7 +91,7 @@ export default function AnimatedLanding({ handleClick }) {
         color={"whiteAlpha.900"}
       >
         <Heading as={"h1"} size={"2xl"}>
-          I'm Prithvi {`->`} {"\u00A0"}
+          I'm Prithvi {`:`} {"\u00A0"}
         </Heading>
 
         <Heading as={"h1"} size={"2xl"}>

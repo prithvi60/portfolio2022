@@ -1,8 +1,10 @@
-import { Box, Heading, Highlight, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Highlight, Image, Text } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 import { FaReact } from "react-icons/fa";
 import Lottie from "lottie-react";
 import contactAnimation from "../assets/contact.json";
+import Profile from "../assets/prithvi.jpeg";
+
 const style = {
   height: 300,
 };
@@ -10,7 +12,8 @@ const style = {
 export const Contact = forwardRef((_, ref) => {
   return (
     <Box
-      p={4}
+      px={4}
+      py={12}
       style={{ height: "100%" }}
       color={"#d2bdf6"}
       ref={ref}
@@ -18,9 +21,9 @@ export const Contact = forwardRef((_, ref) => {
       position={"relative"}
     >
       <Box
-        width={"8%"}
+        width={"3%"}
         height={8}
-        bg={"purple.200"}
+        bg={"teal.100"}
         position={"absolute"}
         top={0}
         left={0}
@@ -40,9 +43,17 @@ export const Contact = forwardRef((_, ref) => {
               textAlign: "center",
             }}
           >
-            Reach me on calendly or email.
+            Feel free to setup up a Calendly call or reach me in any other way!
+            I will try to get back to you as fast as I can.
           </Highlight>
         </Box>
+      </Box>
+      <Box>
+        <Box boxSize="xs">
+          <Image src={Profile} borderRadius="lg" />
+        </Box>
+        <Button>See my resume</Button>
+        <Button>Calendly meet</Button>
       </Box>
       <Box position={"absolute"} right={0} bottom={4}>
         <Lottie animationData={contactAnimation} style={style} />

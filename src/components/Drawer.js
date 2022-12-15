@@ -28,8 +28,10 @@ export default function Modal({ isOpen, onOpen, onClose }) {
               gap={4}
             >
               <Text fontWeight={"bold"}> About me</Text>
-              <Text fontWeight={"bold"}> Work</Text>
               <Text fontWeight={"bold"}> Skill</Text>
+              <Text fontWeight={"bold"}> Work Experience</Text>
+              <Text fontWeight={"bold"}> Projects</Text>
+              <Text fontWeight={"bold"}> Education</Text>
               <Text fontWeight={"bold"}> Contact</Text>
             </Box>
           </DrawerBody>

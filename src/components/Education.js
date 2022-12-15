@@ -18,11 +18,13 @@ const linestyle = {
   width: "100%",
 };
 const Tile = () => (
-  <Card maxW="sm" color={"#d2bdf6"}
-  bg={"#2f3747"}
-  _dark={{
-    bg: "#2f3747",
-  }}
+  <Card
+    maxW="sm"
+    color={"#d2bdf6"}
+    bg={"#2f3747"}
+    _dark={{
+      bg: "#2f3747",
+    }}
   >
     <CardBody>
       <Image
@@ -45,18 +47,18 @@ const Tile = () => (
       </Stack>
     </CardBody>
     {/* <Divider />
-    <CardFooter>
-      <Button variant="ghost" colorScheme="blue">
-        Add to cart
-      </Button>
-    </CardFooter> */}
+      <CardFooter>
+        <Button variant="ghost" colorScheme="blue">
+          Add to cart
+        </Button>
+      </CardFooter> */}
   </Card>
 );
-export const Project = forwardRef((_, ref) => {
+export const Education = forwardRef((_, ref) => {
   return (
     <Box
-    px={4}
-    py={12}
+      px={4}
+      py={12}
       // style={{ height: "100%" }}
       color={"#d2bdf6"}
       ref={ref}
@@ -75,7 +77,7 @@ export const Project = forwardRef((_, ref) => {
       ></Box>
       <Box mb={4}>
         <Box display={"flex"} justifyContent={"center"} width={"100%"}>
-          <Heading mb={2}>Projects:</Heading>
+          <Heading mb={2}>Education:</Heading>
         </Box>
         <Highlight
           query={["design"]}

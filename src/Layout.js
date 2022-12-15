@@ -5,6 +5,9 @@ import { Contact } from "./components/Contact";
 import Header from "./components/Header";
 import { Project } from "./components/Project";
 import AnimatedLanding from "./components/AnimatedLanding";
+import { Work } from "./components/Work";
+import { Education } from "./components/Education";
+import { Skill } from "./components/Skill";
 
 export default function Layout() {
   const ref = useRef(null);
@@ -17,7 +20,10 @@ export default function Layout() {
       <Header />
       <AnimatedLanding handleClick={handleClick} />
       <About ref={ref} />
+      <Skill />
+      <Work />
       <Project />
+      <Education />
       <Contact />
     </Box>
   );
