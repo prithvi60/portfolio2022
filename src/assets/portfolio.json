@@ -1,0 +1,80 @@
+{
+  "work": [
+    {
+      "role": "Frontend Developer",
+      "image": "https://source.unsplash.com/random/?webdevelopment",
+      "description": "Worked as a Junior Developer in a boutique agency building a media planning app for a unicorn company",
+      "technology": "React, Typescript, Scss, Storybook, Graphql, React testing library, Hasura, Figma, functional npm dependencies",
+      "company": ""
+    },
+    {
+      "role": "Freelancer ( Upwork / Linkedin)",
+      "image": "https://source.unsplash.com/random/?webdevelopment",
+      "description": "Worked few small scale projects in Upwork, notably worked in building and revamping GhostKitchen web products",
+      "technology": "React, Javascript, Mui, MongoDb, RestApi",
+      "company": ""
+    },
+    {
+      "role": "SDE 1",
+      "image": "https://source.unsplash.com/random/?webdevelopment",
+      "description": "SDE1 in a early stage startup fully sole contributor in building the client side UI for Ai based Sass product",
+      "technology": "React, Javascript, Chakra ui, Css ,functional npm dependencies",
+      "company": ""
+    }
+  ],
+  "projects": [
+    {
+      "title": "Swiper carousel",
+      "image": "https://source.unsplash.com/random/?webdevelopment",
+      "description": "Heavily styled carousel component for wordpress.",
+      "technology": "Javascript, Css",
+      "link": ""
+    },
+    {
+      "title": "Threejs Model",
+      "image": "https://source.unsplash.com/random/?webdevelopment",
+      "description": "3d Alphabet logo with scroll interaction.",
+      "technology": "ThreeJs, Html, Css",
+      "link": ""
+    },
+
+    {
+      "title": "Library Application",
+      "image": "https://source.unsplash.com/random/?webdevelopment",
+      "description": "BookGallery Application to view add delete books to a Database cluster.",
+      "technology": "NodeJS, Javascript, Css, Mongodb",
+      "link": ""
+    },
+    {
+      "title": "Cake Shop",
+      "image": "https://source.unsplash.com/random/?webdevelopment",
+      "description": "A mobile first react ecomerce bakery site using Redux (Under development).",
+      "technology": "React, Redux, Css",
+      "link": ""
+    },
+    {
+      "title": "Drone landing page",
+      "image": "https://source.unsplash.com/random/?webdevelopment",
+      "description": "Simple webiste using animation libraries and graphics.",
+      "technology": "Html, Javascript, Css, Scss",
+      "link": ""
+    }
+  ],
+  "education": [
+    {
+      "title": "Modern Javascript",
+      "image": "https://source.unsplash.com/random/?webdevelopment",
+      "description": "Simple webiste using animation libraries and graphics."
+    },
+    {
+      "title": "ReactJS & Material UI",
+      "image": "https://source.unsplash.com/random/?webdevelopment",
+      "description": "Simple webiste using animation libraries and graphics."
+    },
+    {
+      "title": "Epic React",
+      "image": "https://source.unsplash.com/random/?webdevelopment",
+      "description": "Simple webiste using animation libraries and graphics."
+    }
+  ]
+}
