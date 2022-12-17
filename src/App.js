@@ -1,26 +1,27 @@
 import "./App.css";
 import "@fontsource/raleway/400.css";
 import "@fontsource/yeon-sung/400.css";
-import { extendTheme, ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import Layout from "./Layout";
+import theme from "./theme";
 // import AnimatedCursor from "react-animated-cursor";
-const config = {
-  initialColorMode: "dark",
-  useSystemColorMode: false,
-  fonts: {
-    heading: `'Yeon Sung', sans-serif`,
-    body: `'Raleway', sans-serif`,
-  },
-  // const colors = {
-  //   brand: {
-  //     900: "#1a365d",
-  //     800: "#153e75",
-  //     700: "#2a69ac",
-  //   },
-  // };
-};
+// const config = {
+//   initialColorMode: "dark",
+//   useSystemColorMode: false,
+//   fonts: {
+//     heading: `'Yeon Sung', sans-serif`,
+//     body: `'Raleway', sans-serif`,
+//   },
+//   // const colors = {
+//   //   brand: {
+//   //     900: "#1a365d",
+//   //     800: "#153e75",
+//   //     700: "#2a69ac",
+//   //   },
+//   // };
+// };
 
-const theme = extendTheme({ config });
+// const theme = extendTheme({ config });
 function App() {
   return (
     <ChakraProvider theme={theme}>

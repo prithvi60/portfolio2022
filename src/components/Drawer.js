@@ -8,13 +8,26 @@ import {
   DrawerCloseButton,
   Box,
   Text,
+  Link,
 } from "@chakra-ui/react";
 import { FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
-
-export default function Modal({ isOpen, onOpen, onClose }) {
+// import ReactWhatsapp from "react-whatsapp";
+export default function Modal({
+  isOpen,
+  onClose,
+  handleClick,
+  setSec,
+  aboutref,
+}) {
   return (
     <>
-      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+      <Drawer
+        isOpen={isOpen}
+        placement="right"
+        onClose={() => onClose(false)}
+        finalFocusRef={aboutref}
+        returnFocus={false}
+      >
         <DrawerOverlay />
         <DrawerContent bg={"gray.800"}>
           <DrawerCloseButton color={"white"} />
@@ -27,12 +40,67 @@ export default function Modal({ isOpen, onOpen, onClose }) {
               flexDirection={"column"}
               gap={4}
             >
-              <Text fontWeight={"bold"}> About me</Text>
-              <Text fontWeight={"bold"}> Skill</Text>
-              <Text fontWeight={"bold"}> Work Experience</Text>
-              <Text fontWeight={"bold"}> Projects</Text>
-              <Text fontWeight={"bold"}> Education</Text>
-              <Text fontWeight={"bold"}> Contact</Text>
+              <Text
+                fontWeight={"bold"}
+                onClick={() => {
+                  handleClick("about");
+                  // onClose();
+                }}
+              >
+                {" "}
+                About me
+              </Text>
+              <Text
+                fontWeight={"bold"}
+                onClick={() => {
+                  handleClick("skill");
+                  // setSec("skill");
+                  // onClose();
+                }}
+              >
+                {" "}
+                Skill
+              </Text>
+              <Text
+                fontWeight={"bold"}
+                onClick={() => {
+                  handleClick("work");
+                  onClose();
+                }}
+              >
+                {" "}
+                Work Experience
+              </Text>
+              <Text
+                fontWeight={"bold"}
+                onClick={() => {
+                  handleClick("project");
+                  onClose();
+                }}
+              >
+                {" "}
+                Projects
+              </Text>
+              <Text
+                fontWeight={"bold"}
+                onClick={() => {
+                  handleClick("education");
+                  onClose();
+                }}
+              >
+                {" "}
+                Education
+              </Text>
+              <Text
+                fontWeight={"bold"}
+                onClick={() => {
+                  handleClick("contact");
+                  onClose();
+                }}
+              >
+                {" "}
+                Contact
+              </Text>
             </Box>
           </DrawerBody>
 
@@ -43,9 +111,18 @@ export default function Modal({ isOpen, onOpen, onClose }) {
               width={"100%"}
               justifyContent={"center"}
             >
-              <FaGithub fill="#d2bdf6" />
-              <FaLinkedinIn fill="#d2bdf6" />
-              <FaWhatsapp fill="#d2bdf6" />
+              <Link href={"https://github.com/prithvi60"} isExternal>
+                <FaGithub fill="#d2bdf6" />
+              </Link>
+              <Link href={"https://www.linkedin.com/in/prithvi-n/"} isExternal>
+                <FaLinkedinIn fill="#d2bdf6" />
+              </Link>
+              <Link
+                href={`https://api.whatsapp.com/send/?phone=7358023088&text=Hey Prithvi&type=phone_number&app_absent=0`}
+                isExternal
+              >
+                <FaWhatsapp fill="#d2bdf6" />
+              </Link>
             </Box>
           </DrawerFooter>
         </DrawerContent>

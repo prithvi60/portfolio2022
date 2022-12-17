@@ -1,4 +1,11 @@
-import { Box, Heading, IconButton, keyframes, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  IconButton,
+  keyframes,
+  Stack,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
 import { FaArrowAltCircleDown } from "react-icons/fa";
@@ -17,7 +24,13 @@ const animationKeyframes = keyframes`
   box-shadow: 0 0 0 0 rgba(#d2bdf6);
 }
 `;
+const fade = keyframes`
+  from {opacity: 0;}
+  to {opacity: 1;}
+`;
 const animation = `${animationKeyframes} 2s  infinite`;
+const fading = `${fade} 4s  forwards`;
+
 const pathVariants = {
   hidden: {
     opacity: 0,
@@ -33,6 +46,15 @@ const pathVariants = {
   },
 };
 export default function AnimatedLanding({ handleClick }) {
+  const [title, setTitle] = React.useState(false);
+  const [mobile] = useMediaQuery("(min-width: 800px)");
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setTitle(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <Stack
       height={"100vh"}
@@ -40,6 +62,7 @@ export default function AnimatedLanding({ handleClick }) {
       position={"absolute"}
       top={0}
       bg={"#1b202b"}
+      py={1}
     >
       <motion.svg
         width="100%"
@@ -82,73 +105,79 @@ export default function AnimatedLanding({ handleClick }) {
 
         <rect width="100%" height="100%" fill="url(#grid)" />
       </motion.svg>
-      <Box
-        width={"100%"}
-        top={"60%"}
-        position={"absolute"}
-        display={"flex"}
-        justifyContent={"center"}
-        color={"whiteAlpha.900"}
-      >
-        <Heading as={"h1"} size={"2xl"}>
-          I'm Prithvi {`:`} {"\u00A0"}
-        </Heading>
+      {title && (
+        <Box animation={fading} px={4}>
+          <Box
+            width={"100%"}
+            top={mobile?"60%":"50%"}
+            position={"absolute"}
+            display={"flex"}
+            flexDir={mobile ? "row" : "column"}
+            justifyContent={"center"}
+            color={"whiteAlpha.900"}
+            textAlign={"center"}
+          >
+            <Heading as={"h1"} size={"2xl"}>
+              I'm Prithvi {`:`} &nbsp;
+            </Heading>
 
-        <Heading as={"h1"} size={"2xl"}>
-          <ReactTypingEffect
-            text={[
-              "Freelancer.",
-              "Frontend Developer.",
-              "Coder.",
-              "Problem solver.",
-            ]}
-            speed={100}
-            eraseSpeed={50}
-            eraseDelay={1500}
-            typingDelay={500}
-            cursorRenderer={(cursor) => <h1>{cursor}</h1>}
-            displayTextRenderer={(text, i) => {
-              return (
-                <h1>
-                  {text.split("").map((char, i) => {
-                    const key = `${i}`;
-                    return (
-                      <span
-                        key={key}
-                        style={{ color: "white", textOverflow: "ellipsis" }}
-                      >
-                        {char}
-                      </span>
-                    );
-                  })}
-                </h1>
-              );
-            }}
-          />
-        </Heading>
-      </Box>
-      <Box
-        width={"100%"}
-        bottom={12}
-        position={"absolute"}
-        display={"flex"}
-        justifyContent={"center"}
-      >
-        <IconButton
-          background={"purple.200"}
-          _hover={{
-            background: "purple.300",
-          }}
-          isRound
-          aria-label="Scroll"
-          onClick={handleClick}
-          size={"sm"}
-          icon={<FaArrowAltCircleDown />}
-          as={motion.div}
-          animation={animation}
-          boxShadow={"0 0 0 0 rgba(#5a99d4, .5)"}
-        />
-      </Box>
+            <Heading as={"h1"} size={"2xl"} textOverflow={"ellipsis"}>
+              <ReactTypingEffect
+                text={[
+                  "Freelancer.",
+                  "Frontend Developer.",
+                  "Coder.",
+                  "Problem solver.",
+                ]}
+                speed={100}
+                eraseSpeed={50}
+                eraseDelay={1500}
+                typingDelay={1500}
+                cursorRenderer={(cursor) => <h1>{cursor}</h1>}
+                displayTextRenderer={(text, i) => {
+                  return (
+                    <h1>
+                      {text.split("").map((char, i) => {
+                        const key = `${i}`;
+                        return (
+                          <span
+                            key={key}
+                            style={{ color: "white", textOverflow: "ellipsis" }}
+                          >
+                            {char}
+                          </span>
+                        );
+                      })}
+                    </h1>
+                  );
+                }}
+              />
+            </Heading>
+          </Box>
+          <Box
+            width={"100%"}
+            bottom={12}
+            position={"absolute"}
+            display={"flex"}
+            justifyContent={"center"}
+          >
+            <IconButton
+              background={"purple.200"}
+              _hover={{
+                background: "purple.300",
+              }}
+              isRound
+              aria-label="Scroll"
+              onClick={() => handleClick("about")}
+              size={"sm"}
+              icon={<FaArrowAltCircleDown />}
+              as={motion.div}
+              animation={animation}
+              boxShadow={"0 0 0 0 rgba(#5a99d4, .5)"}
+            />
+          </Box>
+        </Box>
+      )}
     </Stack>
   );
 }

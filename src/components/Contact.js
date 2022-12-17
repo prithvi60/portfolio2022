@@ -1,29 +1,44 @@
-import { Box, Button, Heading, Highlight, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Heading,
+  Highlight,
+  Image,
+  Link,
+  Text,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 import { FaReact } from "react-icons/fa";
 import Lottie from "lottie-react";
 import contactAnimation from "../assets/contact.json";
 import Profile from "../assets/prithvi.jpeg";
-
+import Doc from "../assets/Resume.pdf";
 const style = {
-  height: 300,
+  height: 200,
 };
 
 export const Contact = forwardRef((_, ref) => {
+  const [mobile] = useMediaQuery("(min-width: 800px)");
+
   return (
     <Box
       px={4}
-      py={12}
+      paddingBottom={16}
       style={{ height: "100%" }}
       color={"#d2bdf6"}
       ref={ref}
       bg={"#1b202b"}
       position={"relative"}
+      display={"flex"}
+      flexDirection={"column"}
+      alignItems={"center"}
+      gap={2}
     >
       <Box
         width={"3%"}
         height={8}
-        bg={"teal.100"}
+        bg={"green.500"}
         position={"absolute"}
         top={0}
         left={0}
@@ -38,7 +53,7 @@ export const Contact = forwardRef((_, ref) => {
             styles={{
               px: "1",
               py: "1",
-              color: "teal.100",
+              color: "green.500",
               fontWeight: "bold",
               textAlign: "center",
             }}
@@ -48,16 +63,46 @@ export const Contact = forwardRef((_, ref) => {
           </Highlight>
         </Box>
       </Box>
-      <Box>
-        <Box boxSize="xs">
+      <Box
+        display={"flex"}
+        flexDirection={{
+          base: "column",
+          md: "column",
+          lg: "row",
+        }}
+        gap={6}
+        alignItems={"center"}
+      >
+        <Box boxSize={"3xs"}>
           <Image src={Profile} borderRadius="lg" />
         </Box>
-        <Button>See my resume</Button>
-        <Button>Calendly meet</Button>
+        <Link
+          href={Doc}
+          download="Prithvi_Resume"
+          target="_blank"
+          style={{
+            textDecoration: "none",
+          }}
+        >
+          <Button colorScheme={"purple"} mt={mobile ? 0 : 20}>
+            See my resume
+          </Button>
+        </Link>
+        <Link
+          href={"https://calendly.com/prithvi-freelancer/30min"}
+          isExternal
+          style={{
+            textDecoration: "none",
+          }}
+        >
+          <Button colorScheme={"purple"}>Calendly meet</Button>
+        </Link>
       </Box>
-      <Box position={"absolute"} right={0} bottom={4}>
-        <Lottie animationData={contactAnimation} style={style} />
-      </Box>
+      {mobile && (
+        <Box position={"absolute"} right={0} bottom={4}>
+          <Lottie animationData={contactAnimation} style={style} />
+        </Box>
+      )}
       <Box
         position={"absolute"}
         bottom={4}

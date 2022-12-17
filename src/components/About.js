@@ -1,4 +1,4 @@
-import { Box, Heading, Highlight, Text } from "@chakra-ui/react";
+import { Box, Heading, Highlight} from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 import Lottie from "lottie-react";
 // import codeAnimation from "../assets/code.json";
@@ -35,7 +35,7 @@ export const About = forwardRef((_, ref) => {
   return (
     <Box
       px={4}
-      py={12}
+      paddingBottom={16}
       // style={{ height: "100%" }}
       color={"#d2bdf6"}
       ref={ref}
@@ -50,14 +50,14 @@ export const About = forwardRef((_, ref) => {
       <Box
         width={"3%"}
         height={8}
-        bg={"teal.100"}
+        bg={"green.500"}
         position={"absolute"}
         top={0}
         left={0}
       ></Box>
-      <Box mb={4}>
+      <Box mb={4} textAlign={"center"}>
         <Box display={"flex"} justifyContent={"center"} width={"100%"}>
-          <Heading mb={2}>About me:</Heading>
+          <Heading  mb={8}>About me:</Heading>
         </Box>
         <Highlight
           query={["Prithvi", "HTML, CSS, and JavaScript"]}
@@ -75,10 +75,9 @@ export const About = forwardRef((_, ref) => {
           unique vision to life through engaging, interactive web experiences. I
           am excited to continue growing and refining my skills as a front end
           developer, and am open to new opportunities to collaborate and create
-          innovative, dynamic websites. Thank you for considering me for your
-          project!
+          innovative, dynamic websites.
         </Highlight>
-        <Text color={"teal.100"}> MY PIC HERE</Text>
+        {/* <Text color={"green.500"}> MY PIC HERE</Text> */}
       </Box>
       {/* <Box>/ */}
       {/* <Heading mb={2}>Skills:</Heading>
@@ -88,8 +87,8 @@ export const About = forwardRef((_, ref) => {
         position={"absolute"}
         display={"flex"}
         justifyContent={"center"}
-        bottom={0}
-        width={"100%"}
+        bottom={8}
+        // width={"100%"}
       >
         <Lottie animationData={lineAnimation} style={linestyle} />
       </Box>

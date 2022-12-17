@@ -1,8 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Box, IconButton, Stack, useDisclosure } from "@chakra-ui/react";
-import { AiOutlineMenu } from "react-icons/ai";
-import Modal from "./Drawer";
+import {
+  Box,
+  //  IconButton,
+  Stack,
+  useMediaQuery,
+} from "@chakra-ui/react";
+// import { AiOutlineMenu } from "react-icons/ai";
+// import Modal from "./Drawer";
 const pathVariants = {
   hidden: {
     opacity: 0,
@@ -19,8 +24,10 @@ const pathVariants = {
   },
 };
 
-const Header = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+const Header = ({ handleClick, setSec, aboutref }) => {
+  // const { isOpen, onOpen, onClose } = useDisclosure();
+  // const [open, setOpen] = React.useState(false);
+  const [mobile] = useMediaQuery("(min-width: 800px)");
 
   return (
     <header style={{ height: "100%" }}>
@@ -31,43 +38,42 @@ const Header = () => {
         flexDirection={"row"}
         p={4}
       >
-        <Box zIndex={"100"} display={"flex"} flexDirection={"column"} gap={4}>
+        {/* <Box zIndex={"100"} display={"flex"} flexDirection={"column"} gap={4} position={"fixed"}>
           <IconButton
             background={"purple.200"}
             _hover={{
               background: "purple.300",
             }}
-            onClick={onOpen}
+            onMouseDown={(e) => {
+              e.preventDefault();
+              setOpen(true);
+            }}
             aria-label="menu"
             size={"sm"}
             icon={<AiOutlineMenu />}
           />
 
-          <Modal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
-          {/* <FaGithub fill="#d2bdf6" />
+          <Modal
+            isOpen={open}
+            // onOpen={onOpen}
+            onClose={setOpen}
+            handleClick={handleClick}
+            setSec={setSec}
+            aboutref={aboutref}
+          />
+          <FaGithub fill="#d2bdf6" />
           <FaLinkedinIn fill="#d2bdf6" />
-          <FaWhatsapp fill="#d2bdf6" /> */}
-        </Box>
+          <FaWhatsapp fill="#d2bdf6" /> 
+        </Box> */}
       </Stack>
-      {/* <Box
+
+      <Box
+        className="ani"
         display={"flex"}
-        justifyContent={"flex-end"}
-        width={"100%"}
-        flexDirection={"row"}
-        color={"#d2bdf6"}
-        position={"absolute"}
-        top={0}
-        right={"5%"}
-        p={2}
+        justifyContent={"center"}
+        p={4}
+        mt={mobile ? 0 : 20}
       >
-        <Box zIndex={"100"} textAlign={"center"}>
-          <Text fontWeight={"bold"}> About me</Text>
-          <Text fontWeight={"bold"}> Work</Text>
-          <Text fontWeight={"bold"}> Skill</Text>
-          <Text fontWeight={"bold"}> Contact</Text>
-        </Box>
-      </Box> */}
-      <Box className="ani" display={"flex"} justifyContent={"center"} p={4}>
         <Stack zIndex={"100"}>
           <motion.svg
             className="pizza-svg"
