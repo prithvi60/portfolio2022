@@ -105,13 +105,13 @@ export default function AnimatedLanding({ handleClick }) {
 
         <rect width="100%" height="100%" fill="url(#grid)" />
       </motion.svg>
-      <Box maxWidth={"fit-content"}>
+      <Box width={"100%"} position={"absolute"} top={mobile ? "60%" : "48%"}>
         {title && (
           <Box animation={fading} px={4}>
             <Box
               width={"100%"}
               top={mobile ? "60%" : "50%"}
-              position={"absolute"}
+              // position={"absolute"}
               display={"flex"}
               flexDir={mobile ? "row" : "column"}
               justifyContent={"center"}
@@ -126,7 +126,7 @@ export default function AnimatedLanding({ handleClick }) {
                 <ReactTypingEffect
                   text={[
                     "Freelancer.",
-                    "Frontend Developer.",
+                    "Web Developer.",
                     "Coder.",
                     "Problem solver.",
                   ]}
@@ -161,7 +161,8 @@ export default function AnimatedLanding({ handleClick }) {
             <Box
               width={"100%"}
               bottom={mobile ? 12 : 20}
-              position={"absolute"}
+              // position={"absolute"}
+              mt={mobile ? 16 : 32}
               display={"flex"}
               justifyContent={"center"}
             >
