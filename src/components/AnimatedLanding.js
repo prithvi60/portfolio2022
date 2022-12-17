@@ -105,79 +105,84 @@ export default function AnimatedLanding({ handleClick }) {
 
         <rect width="100%" height="100%" fill="url(#grid)" />
       </motion.svg>
-      {title && (
-        <Box animation={fading} px={4}>
-          <Box
-            width={"100%"}
-            top={mobile?"60%":"50%"}
-            position={"absolute"}
-            display={"flex"}
-            flexDir={mobile ? "row" : "column"}
-            justifyContent={"center"}
-            color={"whiteAlpha.900"}
-            textAlign={"center"}
-          >
-            <Heading as={"h1"} size={"2xl"}>
-              I'm Prithvi {`:`} &nbsp;
-            </Heading>
+      <Box maxWidth={"fit-content"}>
+        {title && (
+          <Box animation={fading} px={4}>
+            <Box
+              width={"100%"}
+              top={mobile ? "60%" : "50%"}
+              position={"absolute"}
+              display={"flex"}
+              flexDir={mobile ? "row" : "column"}
+              justifyContent={"center"}
+              color={"whiteAlpha.900"}
+              textAlign={"center"}
+            >
+              <Heading as={"h1"} size={"2xl"}>
+                I'm Prithvi {`:`} &nbsp;
+              </Heading>
 
-            <Heading as={"h1"} size={"2xl"} textOverflow={"ellipsis"}>
-              <ReactTypingEffect
-                text={[
-                  "Freelancer.",
-                  "Frontend Developer.",
-                  "Coder.",
-                  "Problem solver.",
-                ]}
-                speed={100}
-                eraseSpeed={50}
-                eraseDelay={1500}
-                typingDelay={1500}
-                cursorRenderer={(cursor) => <h1>{cursor}</h1>}
-                displayTextRenderer={(text, i) => {
-                  return (
-                    <h1>
-                      {text.split("").map((char, i) => {
-                        const key = `${i}`;
-                        return (
-                          <span
-                            key={key}
-                            style={{ color: "white", textOverflow: "ellipsis" }}
-                          >
-                            {char}
-                          </span>
-                        );
-                      })}
-                    </h1>
-                  );
+              <Heading as={"h1"} size={"2xl"} textOverflow={"ellipsis"}>
+                <ReactTypingEffect
+                  text={[
+                    "Freelancer.",
+                    "Frontend Developer.",
+                    "Coder.",
+                    "Problem solver.",
+                  ]}
+                  speed={100}
+                  eraseSpeed={50}
+                  eraseDelay={1500}
+                  typingDelay={1500}
+                  cursorRenderer={(cursor) => <h1>{cursor}</h1>}
+                  displayTextRenderer={(text, i) => {
+                    return (
+                      <h1>
+                        {text.split("").map((char, i) => {
+                          const key = `${i}`;
+                          return (
+                            <span
+                              key={key}
+                              style={{
+                                color: "white",
+                                textOverflow: "ellipsis",
+                              }}
+                            >
+                              {char}
+                            </span>
+                          );
+                        })}
+                      </h1>
+                    );
+                  }}
+                />
+              </Heading>
+            </Box>
+            <Box
+              width={"100%"}
+              bottom={mobile ? 12 : 20}
+              position={"absolute"}
+              display={"flex"}
+              justifyContent={"center"}
+            >
+              <IconButton
+                background={"purple.200"}
+                _hover={{
+                  background: "purple.300",
                 }}
+                isRound
+                aria-label="Scroll"
+                onClick={() => handleClick("about")}
+                size={"sm"}
+                icon={<FaArrowAltCircleDown />}
+                as={motion.div}
+                animation={animation}
+                boxShadow={"0 0 0 0 rgba(#5a99d4, .5)"}
               />
-            </Heading>
+            </Box>
           </Box>
-          <Box
-            width={"100%"}
-            bottom={12}
-            position={"absolute"}
-            display={"flex"}
-            justifyContent={"center"}
-          >
-            <IconButton
-              background={"purple.200"}
-              _hover={{
-                background: "purple.300",
-              }}
-              isRound
-              aria-label="Scroll"
-              onClick={() => handleClick("about")}
-              size={"sm"}
-              icon={<FaArrowAltCircleDown />}
-              as={motion.div}
-              animation={animation}
-              boxShadow={"0 0 0 0 rgba(#5a99d4, .5)"}
-            />
-          </Box>
-        </Box>
-      )}
+        )}
+      </Box>
     </Stack>
   );
 }

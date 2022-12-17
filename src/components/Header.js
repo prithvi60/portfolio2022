@@ -72,7 +72,7 @@ const Header = ({ handleClick, setSec, aboutref }) => {
         display={"flex"}
         justifyContent={"center"}
         p={4}
-        mt={mobile ? 0 : 20}
+        mt={mobile ? 12 : 20}
       >
         <Stack zIndex={"100"}>
           <motion.svg
