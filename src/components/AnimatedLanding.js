@@ -165,9 +165,9 @@ export default function AnimatedLanding({ handleClick }) {
             </Box>
             <Box
               width={"100%"}
-              bottom={mobile ? 8 : 16}
+              // bottom={mobile ? 8 : 16}
               // position={"absolute"}
-              mt={mobile ? 24 : 36}
+              mt={mobile ? 24 : 28}
               display={"flex"}
               justifyContent={"center"}
             >
