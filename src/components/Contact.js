@@ -12,7 +12,7 @@ import React, { forwardRef } from "react";
 import { FaReact } from "react-icons/fa";
 import Lottie from "lottie-react";
 import contactAnimation from "../assets/contact.json";
-import Profile from "../assets/prithvi.jpeg";
+import Profile from "../assets/prithvi.png";
 import Doc from "../assets/Resume.pdf";
 const style = {
   height: 200,
@@ -70,7 +70,7 @@ export const Contact = forwardRef((_, ref) => {
           md: "column",
           lg: "row",
         }}
-        gap={6}
+        gap={mobile?6:2}
         alignItems={"center"}
       >
         <Box boxSize={"3xs"}>
@@ -84,7 +84,7 @@ export const Contact = forwardRef((_, ref) => {
             textDecoration: "none",
           }}
         >
-          <Button colorScheme={"purple"} mt={mobile ? 0 : 20}>
+          <Button colorScheme={"white"} mt={mobile ? 0 : 40} variant={"link"} _hover={{color:"white"}}>
             See my resume
           </Button>
         </Link>

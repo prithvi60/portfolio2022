@@ -1,34 +1,39 @@
 import {
   Box,
   Heading,
-  IconButton,
+  // IconButton,
   keyframes,
   Stack,
   useMediaQuery,
 } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
-import { FaArrowAltCircleDown } from "react-icons/fa";
+// import { FaArrowAltCircleDown } from "react-icons/fa";
 import ReactTypingEffect from "react-typing-effect";
-const animationKeyframes = keyframes`
-0% {
-  transform:scale(0);
-}
-70% {
-  transform:scale(1);
+import Lottie from "lottie-react";
+import scrollAnimation from "../assets/scroll.json";
+const style = {
+  height: 100,
+};
+// const animationKeyframes = keyframes`
+// 0% {
+//   transform:scale(0);
+// }
+// 70% {
+//   transform:scale(1);
 
-  box-shadow: 0 0 0 50px rgba(#d2bdf6;
-}
-  100% {
-    transform:scale(0.7);
-  box-shadow: 0 0 0 0 rgba(#d2bdf6);
-}
-`;
+//   box-shadow: 0 0 0 50px rgba(#d2bdf6;
+// }
+//   100% {
+//     transform:scale(0.7);
+//   box-shadow: 0 0 0 0 rgba(#d2bdf6);
+// }
+// `;
 const fade = keyframes`
   from {opacity: 0;}
   to {opacity: 1;}
 `;
-const animation = `${animationKeyframes} 2s  infinite`;
+// const animation = `${animationKeyframes} 2s  infinite`;
 const fading = `${fade} 4s  forwards`;
 
 const pathVariants = {
@@ -160,17 +165,29 @@ export default function AnimatedLanding({ handleClick }) {
             </Box>
             <Box
               width={"100%"}
-              bottom={mobile ? 12 : 20}
+              bottom={mobile ? 8 : 16}
               // position={"absolute"}
-              mt={mobile ? 16 : 32}
+              mt={mobile ? 24 : 36}
               display={"flex"}
               justifyContent={"center"}
             >
-              <IconButton
+              <Box  onClick={() => handleClick("about")}
+                _hover={{
+                  cursor: "pointer",
+                }}
+              >
+              <Lottie
+                animationData={scrollAnimation}
+                style={style}
+                // loop={1}
+              />
+              </Box>
+              {/* <IconButton
                 background={"purple.200"}
                 _hover={{
                   background: "purple.300",
                 }}
+                color={"black"}
                 isRound
                 aria-label="Scroll"
                 onClick={() => handleClick("about")}
@@ -179,7 +196,7 @@ export default function AnimatedLanding({ handleClick }) {
                 as={motion.div}
                 animation={animation}
                 boxShadow={"0 0 0 0 rgba(#5a99d4, .5)"}
-              />
+              /> */}
             </Box>
           </Box>
         )}

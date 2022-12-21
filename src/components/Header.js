@@ -84,7 +84,7 @@ const Header = ({ handleClick, setSec, aboutref }) => {
           >
             <motion.path
               fill={"none"}
-              d="M-50,-30 l-1,146 q29,-98 50,2 c34,17 41,-49 22,-39 c-3,2 -28,43 25,40 q0,3 17,-34 q-27,69 40,0 q-12,92 -81,112"
+              d="M-70,-30 l-1,146 q29,-98 50,2 c34,17 41,-49 22,-39 c-3,2 -28,43 25,40 q0,3 17,-34 q-27,69 40,0 q-12,92 -81,112"
               strokeWidth="6"
               variants={pathVariants}
             />

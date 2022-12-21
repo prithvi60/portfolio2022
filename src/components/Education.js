@@ -37,10 +37,10 @@ const Tile = ({ item, index }) => (
     key={index}
   >
     <Link href={item.link} isExternal>
-      <CardHeader justifyContent={"flex-end"} display={"flex"}>
+      <CardHeader justifyContent={"flex-end"} display={"flex"} paddingBottom={0}>
         <FaExternalLinkAlt />
       </CardHeader>
-      <CardBody>
+      <CardBody paddingTop={0}>
         {/* <Image
         src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
         alt="Green double couch with wooden legs"
