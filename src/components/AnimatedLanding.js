@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Heading,
   // IconButton,
   keyframes,
@@ -167,20 +168,24 @@ export default function AnimatedLanding({ handleClick }) {
               width={"100%"}
               // bottom={mobile ? 8 : 16}
               // position={"absolute"}
-              mt={mobile ? 24 : 28}
+              mt={mobile ? 20 : 28}
               display={"flex"}
               justifyContent={"center"}
             >
-              <Box  onClick={() => handleClick("about")}
+              <Box
+                onClick={() => handleClick("about")}
+                as={Button}
+                bg={"transparent"}
                 _hover={{
-                  cursor: "pointer",
+                  bg:"transparent"
+
                 }}
               >
-              <Lottie
-                animationData={scrollAnimation}
-                style={style}
-                // loop={1}
-              />
+                <Lottie
+                  animationData={scrollAnimation}
+                  style={style}
+                  // loop={1}
+                />
               </Box>
               {/* <IconButton
                 background={"purple.200"}

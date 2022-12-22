@@ -2,6 +2,7 @@ import {
   Box,
   Card,
   CardBody,
+  CardFooter,
   CardHeader,
   Heading,
   Highlight,
@@ -9,71 +10,150 @@ import {
   Link,
   Stack,
   Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 import Lottie from "lottie-react";
 import lineAnimation from "../assets/divider.json";
 import Profile from "../assets/portfolio.json";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import {
+  FaExternalLinkAlt,
+  FaReact,
+  FaCss3,
+  FaJsSquare,
+  FaHtml5,
+  FaNode,
+} from "react-icons/fa";
+import {
+  SiRedux,
+  SiMongodb,
+  SiTypescript,
+  SiNpm,
+  SiFigma,
+  SiStorybook,
+  SiHasura,
+  SiApollographql,
+  SiChakraui,
+  SiMaterialui,
+  SiTestinglibrary,
+  SiSass,
+  SiThreedotjs,
+} from "react-icons/si";
+import { TbApi } from "react-icons/tb";
+const icons = [
+  { name: "React", icon: <FaReact /> },
+  { name: "Css", icon: <FaCss3 /> },
+  { name: "Javascript", icon: <FaJsSquare /> },
+  { name: "Html", icon: <FaHtml5 /> },
+  { name: "NodeJS", icon: <FaNode /> },
+  { name: "Redux", icon: <SiRedux /> },
+  { name: "Mongodb", icon: <SiMongodb /> },
+  { name: "Typescript", icon: <SiTypescript /> },
+  { name: "npm packages", icon: <SiNpm /> },
+  { name: "Figma", icon: <SiFigma /> },
+  { name: "Storybook", icon: <SiStorybook /> },
+  { name: "Hasura", icon: <SiHasura /> },
+  { name: "Graphql", icon: <SiApollographql /> },
+  { name: "Chakra ui", icon: <SiChakraui /> },
+  { name: "Material ui", icon: <SiMaterialui /> },
+  { name: "Scss", icon: <SiSass /> },
+  { name: "ThreeJS", icon: <SiThreedotjs /> },
+  { name: "RestApi", icon: <TbApi /> },
+  { name: "React testing library", icon: <SiTestinglibrary /> },
+];
 const linestyle = {
   height: 5,
   width: "100%",
 };
-const Tile = ({ item, index }) => (
-  <Card
-    minW={{
-      base: "80%",
-      md: "80%",
-      lg: "unset",
-    }}
-    flexGrow={1}
-    color={"#d2bdf6"}
-    bg={"#2f3747"}
-    _dark={{
-      bg: "#2f3747",
-    }}
-    key={index}
-  >
-    <Link href={item.company} isExternal>
-      <CardHeader justifyContent={"flex-end"} display={"flex"}>
-        <FaExternalLinkAlt />
-      </CardHeader>
-      <CardBody>
-        <Image
-          src={item.image}
-          // boxSize={{
-          //   base: "5%",
-          //   md: "5%",
-          //   lg: "20%",
-          // }}
-          boxSize={"20%"}
-          width={"100%"}
-          alt="Green double couch with wooden legs"
-          borderRadius="lg"
-        />
-        <Stack
-          mt="6"
-          spacing="3"
-          display={"flex"}
-          flexDirection={"column"}
-          alignItems={"center"}
-        >
-          <Heading size="md">{item.role}</Heading>
-          <Text textAlign={"center"}>{item.description}</Text>
-          <Text textAlign={"center"} fontSize={"xs"}  textColor={"teal.100"}>
-            {item.technology}
-          </Text>
-        </Stack>
-      </CardBody>
-      {/* <Divider />
-      <CardFooter>
-      <Button variant="ghost" colorScheme="blue">
-      Add to cart
-      </Button>
-    </CardFooter> */}
-    </Link>
-  </Card>
-);
+const Tile = ({ item, index }) => {
+  const [mobile] = useMediaQuery("(min-width: 800px)");
+
+  return (
+    <Card
+      minW={{
+        base: "80%",
+        md: "80%",
+        lg: "unset",
+      }}
+      flexGrow={1}
+      color={"#d2bdf6"}
+      bg={"#2f3747"}
+      _dark={{
+        bg: "#2f3747",
+      }}
+      key={index}
+    >
+      <Link href={item.company} isExternal>
+        <CardHeader justifyContent={"flex-end"} display={"flex"}>
+          <FaExternalLinkAlt />
+        </CardHeader>
+        <CardBody>
+          <Image
+            src={item.image}
+            // boxSize={{
+            //   base: "5%",
+            //   md: "5%",
+            //   lg: "20%",
+            // }}
+            boxSize={"20%"}
+            width={"100%"}
+            alt="Green double couch with wooden legs"
+            borderRadius="lg"
+          />
+          <Stack
+            mt="6"
+            spacing="3"
+            display={"flex"}
+            flexDirection={"column"}
+            alignItems={"center"}
+          >
+            <Heading size="md">{item.role}</Heading>
+            <Text textAlign={"center"}>{item.description}</Text>
+            {!mobile && (
+              <Text textAlign={"center"} fontSize={"xs"} textColor={"teal.100"}>
+                {item.technology}
+              </Text>
+            )}
+          </Stack>
+        </CardBody>
+
+        {mobile && (
+          <CardFooter>
+            <Box
+              textAlign={"center"}
+              textColor={"teal.100"}
+              display={"flex"}
+              // justifyContent={"center"}
+              // width={"100%"}
+              fontSize={"md"}
+              gap={2}
+              position={"absolute"}
+              bottom={4}
+            >
+              {/* {item.technology} */}
+              {/* <Tooltip label="test"> */}
+              {icons
+                .filter((obj) => item.technology.includes(obj.name))
+                .map((obj, index) => {
+                  return (
+                    <Box
+                      key={index}
+                      _hover={{ color: "yellow.200" }}
+                      className="tooltip"
+                    >
+                      {obj.icon}
+                      <Text className="tooltiptext">{obj.name}</Text>
+                    </Box>
+                  );
+                })}
+              {/* </Tooltip> */}
+            </Box>
+          </CardFooter>
+        )}
+      </Link>
+    </Card>
+  );
+};
 export const Work = forwardRef((_, ref) => {
   return (
     <Box
