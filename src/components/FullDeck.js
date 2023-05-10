@@ -53,9 +53,28 @@ export const FullDeck = () => {
       style={{
         position: "fixed",
         top: 0,
+        right: "1%",
         zIndex: 100,
       }}
-    ></div>
+    >
+      <a
+        style={{
+          color: "white",
+          cursor: "pointer",
+          fontWeight: "bolder",
+          padding: "12px 4px",
+          background: "#bc7843",
+          borderRadius: "20%",
+          textDecoration: "none",
+        }}
+        href={
+          "https://docs.google.com/document/d/1VeGAfCYAYtPcnZvLb409EIPi3IHtBj7x-kKM6E4SAtw/edit?usp=sharing"
+        }
+        target="blank"
+      >
+        Links
+      </a>
+    </div>
   );
   const [width, setWidth] = React.useState(window.innerWidth);
   function handleWindowSizeChange() {
@@ -81,7 +100,7 @@ export const FullDeck = () => {
           margin: "0 2%",
         }}
       >
-        {" "}
+        <Menu />
         Please rotate screen to landscape for better experience!
       </div>
     );
