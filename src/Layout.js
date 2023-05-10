@@ -76,7 +76,7 @@ export default function Layout() {
 
   return (
     <Box bg={"blackAlpha.900"} height={"100vh"} position={"relative"}>
-      <Header handleClick={handleClick} setSec={setSec}  aboutref={aboutref} />
+      {/* <Header handleClick={handleClick} setSec={setSec}  aboutref={aboutref} /> */}
       <AnimatedLanding handleClick={handleClick} />
       <About ref={aboutref} />
       <Skill ref={skillref} />

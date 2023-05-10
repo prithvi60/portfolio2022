@@ -1,4 +1,4 @@
-import { Box, Heading, Highlight} from "@chakra-ui/react";
+import { Box, Heading, Highlight } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 import Lottie from "lottie-react";
 // import codeAnimation from "../assets/code.json";
@@ -57,9 +57,9 @@ export const About = forwardRef((_, ref) => {
       ></Box>
       <Box mb={4} textAlign={"center"}>
         <Box display={"flex"} justifyContent={"center"} width={"100%"}>
-          <Heading  mb={8}>About me:</Heading>
+          {/* <Heading mb={8}>About me:</Heading> */}
         </Box>
-        <Highlight
+        {/* <Highlight
           query={["Prithvi", "HTML, CSS, and JavaScript"]}
           styles={{ px: "1", py: "1", color: "teal.100", fontWeight: "bold" }}
         >
@@ -76,7 +76,36 @@ export const About = forwardRef((_, ref) => {
           am excited to continue growing and refining my skills as a front end
           developer, and am open to new opportunities to collaborate and create
           innovative, dynamic websites.
-        </Highlight>
+        </Highlight> */}
+        <div
+          style={{ padding: "3%", display: "flex", justifyContent: "center" }}
+        >
+          <div
+            style={{
+              position: "relative",
+              paddingBottom: "56.25%",
+              height: "100vh",
+              width: "100vw",
+              borderRadius: "5%",
+            }}
+          >
+            <iframe
+              title="intro"
+              src="https://www.loom.com/embed/b85679a60d4941a8b27ce10c95b0a5e3"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+              style={{
+                position: "absolute",
+                top: "0",
+                left: "0",
+                width: "100%",
+                height: "100%",
+              }}
+            ></iframe>
+          </div>
+        </div>
         {/* <Text color={"green.500"}> MY PIC HERE</Text> */}
       </Box>
       {/* <Box>/ */}
