@@ -98,3 +98,6 @@ body::-webkit-scrollbar-thumb {
 .fp-watermark{
   display: none;
 }
+#fp-nav{
+  z-index:unset !important;
+}

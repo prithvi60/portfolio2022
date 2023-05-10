@@ -66,6 +66,7 @@ export const FullDeck = () => {
           background: "#bc7843",
           borderRadius: "20%",
           textDecoration: "none",
+          zIndex: "999999",
         }}
         href={
           "https://docs.google.com/document/d/1VeGAfCYAYtPcnZvLb409EIPi3IHtBj7x-kKM6E4SAtw/edit?usp=sharing"
