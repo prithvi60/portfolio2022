@@ -5,6 +5,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Layout from "./Layout";
 import theme from "./theme";
 import AnimatedCursor from "react-animated-cursor";
+
 // const config = {
 //   initialColorMode: "dark",
 //   useSystemColorMode: false,

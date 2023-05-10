@@ -95,3 +95,6 @@ body::-webkit-scrollbar-thumb {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+.fp-watermark{
+  display: none;
+}
