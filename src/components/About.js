@@ -1,4 +1,4 @@
-import { Box, Heading, Highlight } from "@chakra-ui/react";
+import { Box,} from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 import Lottie from "lottie-react";
 // import codeAnimation from "../assets/code.json";

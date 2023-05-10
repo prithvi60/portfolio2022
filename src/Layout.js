@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import React, { useRef, useState } from "react";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import { Project } from "./components/Project";
 import AnimatedLanding from "./components/AnimatedLanding";
 import { Work } from "./components/Work";
@@ -16,6 +16,7 @@ export default function Layout() {
   const projectref = useRef(null);
   const educationref = useRef(null);
   const contactref = useRef(null);
+  // eslint-disable-next-line no-unused-vars
   const [sec, setSec] = useState(null);
   console.log("main", sec);
   const handleClick = (section) => {
