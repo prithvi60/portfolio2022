@@ -68,7 +68,7 @@ export const FullDeck = () => {
     };
   }, []);
 
-  if (width <= 768) {
+  if (width <= 600) {
     return (
       <div
         style={{
